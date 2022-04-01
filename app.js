@@ -19,6 +19,10 @@
    email:String,
    password:String
  });
+
+ const secret = "ThisIsTheSecretString";
+ userSchema.plugin(encrypt,{secret:secret,encryptedFields: ['password']});
+
  const User = mongoose.model("User",userSchema);
 
 
